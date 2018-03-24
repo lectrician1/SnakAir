@@ -14,7 +14,7 @@ const logbook = new Discord.RichEmbed()
 
 client.on('message', msg => {
   if (msg.content === 'SAlogbook') {
-    msg.reply({logbook});
+    msg.reply({embed: logbook});
   }
 });
 
