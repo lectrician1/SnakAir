@@ -1,2 +1,2 @@
 # SnakAir
-A Discord bot made for JonFly's SnakAIr community
+A Discord bot made for JonFly's SnakAir community
