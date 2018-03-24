@@ -9,7 +9,7 @@ const logbook = new Discord.RichEmbed()
   .setAuthor("Logbook")
   .setColor(0x00AE86)
   .setImage("https://datastudio.google.com/embed/reporting/1OgHD3GCsazMPvi5XIpdYLv0z1n49Jo8f/page/p7LO")
-  .setThumbnail("http://i.imgur.com/p2qNFag.png")
+  .setThumbnail("")
   .setTimestamp();
 
 client.on('message', msg => {
