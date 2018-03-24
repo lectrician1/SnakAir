@@ -13,7 +13,7 @@ client.on('message', msg => {
                 name: "Logbook",
             },
             image: {
-                 url: "http://via.placeholder.com/450x250",
+                 url: "https://datastudio.google.com/embed/reporting/1OgHD3GCsazMPvi5XIpdYLv0z1n49Jo8f/page/p7LO",
             },
             timestamp: new Date(),
             color: 0x00AE86
