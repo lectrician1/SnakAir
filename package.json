@@ -3,7 +3,8 @@
   "main": "app.js",
   "dependencies": {
     "discord.js": "^11.3.2",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "url-to-screenshot": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {
