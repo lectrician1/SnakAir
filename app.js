@@ -1,7 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const Screenshot = require('url-to-screenshot')
-const fs = require('fs')
+const Screenshot = require('url-to-screenshot');
+const fs = require('fs');
+const http = require('http'); 
  
 new Screenshot('http://ghub.io/')
   .width(800)
@@ -13,7 +14,8 @@ new Screenshot('http://ghub.io/')
   });
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+ setInterval(function(){ http.get("http://gc-system.herokuapp.com/"); }, 30000);
+ console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('message', msg => {
