@@ -1,5 +1,16 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const Screenshot = require('url-to-screenshot')
+const fs = require('fs')
+ 
+new Screenshot('http://ghub.io/')
+  .width(800)
+  .height(600)
+  .capture()
+  .then(img =>
+    fs.writeFileSync(`${__dirname}/example.png`, img)
+    console.log('open example.png')
+  });
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
