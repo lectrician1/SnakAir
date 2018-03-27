@@ -1,17 +1,15 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const Screenshot = require('url-to-screenshot');
-const fs = require('fs');
 const http = require('http'); 
+var webshot = require('webshot');
+var fs      = require('fs');
  
-new Screenshot('http://ghub.io/')
-  .width(800)
-  .height(600)
-  .capture()
-  .then(img => {
-    fs.writeFileSync(`${__dirname}/example.png`, img)
-    console.log('open example.png')
-  });
+var renderStream = webshot('https://datastudio.google.com/embed/reporting/1OgHD3GCsazMPvi5XIpdYLv0z1n49Jo8f/page/p7LO');
+var file = fs.createWriteStream('logbook.png', {encoding: 'binary'});
+ 
+renderStream.on('data', function(data) {
+  file.write(data.toString('binary'), 'binary');
+});
 
 client.on('ready', () => {
  setInterval(function(){ http.get("http://gc-system.herokuapp.com/"); }, 30000);
@@ -26,7 +24,7 @@ client.on('message', msg => {
                 name: "Logbook",
             },
             image: {
-                 url: "https://datastudio.google.com/embed/reporting/1OgHD3GCsazMPvi5XIpdYLv0z1n49Jo8f/page/p7LO",
+                 url: "http://gc-system.herokuapp.com/logbook.png/",
             },
             timestamp: new Date(),
             color: 0x00AE86
