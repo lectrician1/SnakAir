@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const http = require('http'); 
-var webshot = require('webshot');
-var fs      = require('fs');
+var webshot = require('node-webshot');
+var fs = require('fs');
  
 var renderStream = webshot('https://datastudio.google.com/embed/reporting/1OgHD3GCsazMPvi5XIpdYLv0z1n49Jo8f/page/p7LO');
 var file = fs.createWriteStream('logbook.png', {encoding: 'binary'});
